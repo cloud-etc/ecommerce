@@ -1,0 +1,5 @@
+*.idea
+*.sqlite3
+venv
+*.pyc
+ecommerce/__pycache__/settings.cpython-36.pyc
