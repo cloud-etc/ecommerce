@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from catalog.models import Category
 
 def index(request):
     return render(request, 'core/index.html')
