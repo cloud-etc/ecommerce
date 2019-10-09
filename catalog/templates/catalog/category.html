@@ -1,18 +1,18 @@
 {% extends "core/base.html" %}
 
 {% block title %}
-    Listagem de Produtos {{ block.super }}
+    {{ category_current }} | {{ block.super }}
 {% endblock %}
 
 {% block container %}
 <div class="page-header">
-    <h2>Produtos</h2>
+    <h2>{{ current_category }}</h2>
 </div>
 <div class="row">
     {% for product in product_list  %}
     <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-            <a href="#">
+            <a href="{{ product.get_absolute_url }}">
                 <img src="http://placehold.it/350x250" alt="" />
             </a>
             <div class="caption">
