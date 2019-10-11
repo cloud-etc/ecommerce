@@ -2,7 +2,6 @@ from django.db import models
 from django.urls import reverse
 
 class Category(models.Model):
-
     name = models.CharField('Nome', max_length=100)
     slug = models.SlugField('Identificador', max_length=100)
     created = models.DateTimeField('Criado em', auto_now_add=True)
@@ -20,7 +19,6 @@ class Category(models.Model):
         return reverse('category', kwargs={'slug': self.slug})
 
 class Product(models.Model):
-
     name = models.CharField('Nome', max_length=100)
     slug = models.SlugField('Identificador', max_length=100)
     category = models.ForeignKey('catalog.Category', verbose_name='Categoria', on_delete=models.CASCADE)

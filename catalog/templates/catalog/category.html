@@ -1,7 +1,9 @@
-{% extends "core/base.html" %}
+{% extends 'core/base.html' %}
+
+{% load pagination %}
 
 {% block title %}
-    {{ category_current }} | {{ block.super }}
+	{{ current_category }} | {{ block.super }}
 {% endblock %}
 
 {% block container %}
@@ -9,21 +11,24 @@
     <h2>{{ current_category }}</h2>
 </div>
 <div class="row">
-    {% for product in product_list  %}
-    <div class="col-sm-6 col-md-4">
+    {% for product in product_list %}
+     <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
             <a href="{{ product.get_absolute_url }}">
                 <img src="http://placehold.it/350x250" alt="" />
             </a>
             <div class="caption">
-                <h2>{{ product }}</h2>
-                {{ product.description|linebreaks }}
-                <p><a href="{{ product.get_absolute_url }}" class="btn btn-success"
-                role="button">Button</a> <a href="#" class="btn btn-default"
-                role="button">Button</a></p>
+                <h3>{{ product }}</h3>
+                {{ product.description|linebreaksbr }}
+                <p><a href="{{ product.get_absolute_url }}"
+                      class="btn btn-success"
+                    role="button">Button</a> <a href="#"
+                      class="btn btn-default"
+                    role="button">Button</a></p>
             </div>
         </div>
     </div>
     {% endfor %}
 </div>
+{% pagination request paginator page_obj %}
 {% endblock %}
