@@ -141,6 +141,9 @@ DEFAULT_FROM_EMAIL=EMAIL_HOST_USER
 EMAIL_PORT=587
 EMAIL_USE_TLS=True
 
+#usuario e auth
+LOGIN_URL = 'login.html'
+LOGIN_REDIRECT_URL = 'index'
 
 #STATICFILES_DIRS = [
 #    os.path.join(BASE_DIR, 'staticfiles')
