@@ -5,11 +5,12 @@ from core import views
 from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('contato/', views.contact, name='contact'),
+    path('', views.index, name='core_index'),
+    path('contato/', views.contact, name='core_contact'),
     path('entrar/', LoginView.as_view(template_name='core/login.html'), name="login"),
     path('sair/', LogoutView.as_view(template_name='core/index.html'), name="logout"),
     path('catalogo/', include('catalog.urls'), name='catalog'),
+    path('compras/', include('checkout.urls'), name='checkout'),
     path('conta/', include('accounts.urls'), name='accounts'),
     path('admin/', admin.site.urls),
 ]
