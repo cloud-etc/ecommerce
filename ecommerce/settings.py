@@ -130,6 +130,7 @@ LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'accounts_index'
 LOGOUT_URL = 'logout'
 AUTH_USER_MODEL = 'accounts.User'
+
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'accounts.backends.ModelBackend',
@@ -144,6 +145,10 @@ MESSAGE_TAGS = {
     messages_constants.WARNING: 'warning',
     messages_constants.ERROR: 'danger',
 }
+
+PAGSEGURO_TOKEN = '8C8CA7AD7679432FBE71C93D1B526AC3'
+PAGSEGURO_EMAIL = 'dbaelvis@gmail.com'
+PAGSEGURO_SANDBOX = True
 
 try:
     from .local_settings import *

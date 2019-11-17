@@ -43,11 +43,11 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
-                    <li><a href="{% url 'accounts_index' %}">Minha Conta</a></li>
+                    <li><a href="{% url 'accounts:index' %}">Minha Conta</a></li>
                     <li><a href="{% url 'logout' %}">Sair</a></li>
                 {% else %}
                     <li><a href="{% url 'login' %}">Entrar</a></li>
-                    <li><a href="{% url 'accounts_register' %}">Registro</a></li>
+                    <li><a href="{% url 'accounts:register' %}">Registro</a></li>
 
                 {% endif %}
                     <li><a href="{% url 'checkout:cart_item' %}">Carrinho</a></li>
