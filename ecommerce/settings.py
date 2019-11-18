@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # libs
     'widget_tweaks',
+    'paypal.standard.ipn',
     # apps
     'core',
     'accounts',
@@ -127,7 +128,7 @@ EMAIL_USE_TLS=True
 
 #usuario e auth
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'accounts_index'
+LOGIN_REDIRECT_URL = 'accounts:index'
 LOGOUT_URL = 'logout'
 AUTH_USER_MODEL = 'accounts.User'
 
@@ -149,6 +150,9 @@ MESSAGE_TAGS = {
 PAGSEGURO_TOKEN = 'A690ED65887B4CC394F37AE1837F54CF'
 PAGSEGURO_EMAIL = 'ocrsha@gmail.com'
 PAGSEGURO_SANDBOX = True
+
+PAYPAL_TEST = True
+PAYPAL_EMAIL = 'ocrsha@gmail.com'
 
 try:
     from .local_settings import *
