@@ -11,6 +11,7 @@ urlpatterns = [
     path('sair/', LogoutView.as_view(template_name='core/index.html'), name="logout"),
     path('catalogo/', include('catalog.urls'), name='catalog'),
     path('compras/', include('checkout.urls'), name='checkout'),
+    path('paypal/', include('paypal.standard.ipn.urls'), name='paypal'),
     path('conta/', include('accounts.urls'), name='accounts'),
     path('admin/', admin.site.urls),
 ]
